@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" ng-app="todoApp">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    
+    <title>Todo App | Hack Club</title>
+    <style type="text/css">
+        .bg-hackclub{
+            background: #F34C5E;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid bg-hackclub">
+      <div class="container">
+        <h1 class="display-4">Todo App</h1>
+        <p class="lead">This is MEANjs built in web application for Hack Club.</p>
+      </div>
+    </div>
+    
+    <div class="container">
+        <div class="row" ng-controller="createTodoController">
+          <div class="col-md-6 offset-md-2">
+            <div class="input-group input-group-lg">
+              <input  type="text" ng-model="todo.task" class="form-control" placeholder="Write your daily task here....." aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+            </div>
+          </div>
+          
+          <div class="col-sm-3">
+            <button type="button" ng-click="createTodo()" class="btn btn-outline-info btn-lg" >Add Task</button>
+          </div>
+        </div>
+        <hr>
+        <div ng-controller="myCtrl">
+           
+            <div class="row" ng-repeat="task in tasks.data">
+              <div class="col-md-7 offset-md-2">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="Checkbox for following text input">
+                    </div>
+                  </div>
+                   <h1 class="form-control">{{task.task}}</h1>
+                    
+                  <div class="input-group-append">
+                    <div class="input-group-text bg-danger" ng-click="deleteTask(task._id)">
+                      <i class="fa fa-trash-o text-white"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>    
+          </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

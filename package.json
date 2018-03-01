@@ -1,0 +1,16 @@
+{
+  "name": "todo-webapp",
+  "version": "1.0.0",
+  "description": "MEANjs todo web app tutorial",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amitsin6h",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.7"
+  }
+}
